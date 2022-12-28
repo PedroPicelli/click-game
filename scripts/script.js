@@ -17,8 +17,8 @@ if(dia > 15 && mes == 11 && dia < 31 && mes == 11) { // Vê se é natal
     let adc = window.document.getElementById('mouse') // pega a div de baixo
     let dc = window.document.getElementById('cursor-div')
     var toca = window.document.createElement('img')
-    toca.setAttribute('src', '../imagens/toca-papai-noel.png')
-    adc.style.background = '#9f2010 url("../imagens/neve.png") repeat center top scroll'
+    toca.setAttribute('src', 'imagens/toca-papai-noel.png')
+    adc.style.background = '#9f2010 url("imagens/neve.png") repeat center top scroll'
     adc.style.backgroundSize = 'cover'
     adc.style.animation = 'animacao-neve 7s infinite linear'
     toca.style.width = '230px'

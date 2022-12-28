@@ -19,6 +19,7 @@ div#mouse {
     height: 300px;
     left: 50%;
     bottom: 0;
+    background-color: gray;
     transform: translateX(-50%);
     box-shadow: 0 -2px 7px 3px rgba(0, 0, 0, 0.568);
     border-top: 3px solid rgba(105, 105, 105, 0.712);
