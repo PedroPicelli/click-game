@@ -1,24 +1,39 @@
 let titulo = window.document.getElementById('titulo') // pego o local do titulo
-let cursor = window.document.getElementById('cursor') // pego o local do cursor
+let cursordiv = window.document.getElementById('cursor-div') // pego o local do cursor
+let cursor = window.document.getElementById('cursor')
 let vc = window.document.querySelector('h1#vezesClicadas') // pego o local que fala quantas clicadas
+let date = new Date()
+let dia = date.getDate()
+let mes = date.getMonth()
 let ponto = 0 // reseto a quantia de pontos
 let adp = 1 // seleciono a quantia de passo dos pontos
-cursor.addEventListener('mouseover', mouseDentro)
-cursor.addEventListener('mouseout', mouseFora)
-cursor.addEventListener('click', clique)
+let natal = false
+cursordiv.addEventListener('mouseover', mouseDentro)
+cursordiv.addEventListener('mouseout', mouseFora)
+cursordiv.addEventListener('click', clique)
 
-function definir() {
-    let num = Number(window.document.getElementById('num').value)
-    adp = num
+if(dia > 15 && mes == 11 && dia < 31 && mes == 11) { // Vê se é natal
+    natal = true
+    let adc = window.document.getElementById('mouse') // pega a div de baixo
+    let dc = window.document.getElementById('cursor-div')
+    var toca = window.document.createElement('img')
+    toca.setAttribute('src', '../imagens/toca-papai-noel.png')
+    adc.style.background = '#9f2010 url("../imagens/neve.png") repeat center top scroll'
+    adc.style.backgroundSize = 'cover'
+    adc.style.animation = 'animacao-neve 7s infinite linear'
+    toca.style.width = '230px'
+    toca.style.position = 'absolute'
+    toca.style.top = '130px'
+    dc.appendChild(toca)
+    console.log('Feliz Natal!!!') // Escreve no console: Feliz Natal!!!
 }
 
 function arredondar(quantia, redondo) {
-    str = String(quantia / redondo)
+    let str = String(quantia / redondo) //Cria uma var como a string do valor
     let ldp = false
-    for(let c = 0; c < str.length; c++) {
+    for(let c = 0; c < str.length; c++) { // Procura o local do ponto
         if(str[c] === '.') {
             ldp = c
-            console.log(ldp)
         }
     }
 
@@ -48,12 +63,21 @@ function arredondar(quantia, redondo) {
 }
 
 
-function mouseDentro() {
+function mouseDentro() { // Aumenta o tamanho do mouse quando o cursor entra
+    if(natal === true) {
+        toca.style.width = '250px'
+    }
     cursor.style.width = '200px'
 }
 
 function clique() {
-    cursor.style.width = '190px'
+    if(natal === true) {
+        toca.style.width = '240px'
+        setTimeout(function() {
+            toca.style.width = '250px'
+        }, 250)
+    }
+    cursor.style.width = '190px' // diminui o tamanho do mouse quando o mouse clica
     ponto += adp
     if(ponto >= 1000 && ponto < 1000000) { // Vejo em qual casa tem que arredondar
         vc.innerText = `${arredondar(ponto, 1000)}Mil clicadas`
@@ -70,11 +94,19 @@ function clique() {
     }
     let count = 1
     setTimeout(function() {
-        cursor.style.width = '200px'
+        cursor.style.width = '200px' // Aumenta o tamanho do mouse depois de 25milessimos
     }, 250)
 }
 
-function mouseFora() {
+function mouseFora() { // Diminui o tamanho do mouse quando o cursor sai.
+    if(natal === true) {
+        toca.style.width = '230px'
+        setTimeout(function() {
+            if(toca.style.width == '250px') {
+                toca.style.width = '230'
+            }
+        }, 250)
+    }
     cursor.style.width = '180px'
     setTimeout(function() {
         if(cursor.style.width == '200px') {
