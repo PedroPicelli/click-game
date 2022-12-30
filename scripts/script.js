@@ -141,10 +141,14 @@ function mouseFora() { // Diminui o tamanho do mouse quando o cursor sai.
 let parar1 = false
 let parar2 = false
 let parar3 = false
+let parar4 = false
+let parar5 = false
 
 let melho1ponto5 = window.document.getElementById('melho1ponto5')
 let melho2 = window.document.getElementById('melho2')
 let melho4 = window.document.getElementById('melho4')
+let melho4ponto5 = window.document.getElementById('melho4ponto5')
+let melho5 = window.document.getElementById('melho5')
 
 let btclicou = false
 
@@ -183,6 +187,30 @@ function detectando() {
         melho4.style.filter = 'none'
     } else {
         melho4.style.filter = 'grayscale(100%)'
+    }
+
+    if(parar4 === false) {
+        if(ponto >= 37500) {
+            melho4ponto5.style.display = 'inline'
+            parar4 = true
+        }
+    }
+    if(ponto >= 75000) {
+        melho4ponto5.style.filter = 'none'
+    } else {
+        melho4ponto5.style.filter = 'grayscale(100%)'
+    }
+
+    if(parar5 === false) {
+        if(ponto >= 500000) {
+            melho5.style.display = 'inline'
+            parar5 = true
+        }
+    }
+    if(ponto >= 1000000) {
+        melho5.style.filter = 'none'
+    } else {
+        melho5.style.filter = 'grayscale(100%)'
     }
 
     setTimeout(function (){ // Faz a detectação infinita
