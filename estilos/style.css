@@ -71,10 +71,10 @@ div#mouse div.melhorias-solo {
 }
 
 div#mouse input.btmelho {
+    display: none;
     margin: 10px 0 0 10px;
     width: 35px;
     transition: width .2s;
-    display: none;
 }
 
 div.msg {
