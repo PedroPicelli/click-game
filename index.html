@@ -10,20 +10,41 @@
     </head>
     <body>
         <main>
-            <p>Versão beta 0.2</p>
+            <p>Versão beta 0.3</p>
             <div id="mouse">
                 <div id="vc">
                     <h1 id="vezesClicadas">0 clicadas</h1>
+                    <p id="cpc" class="destaque">1 clicada por clique</p>
                     <p>Clique no mouse para receber clicadas</p>
                 </div>
                 <div id="cursor-div">
                     <img src="imagens/cursor-pointer.png" id="cursor"alt="Mouse">
                 </div>
                 <div id="melhorias">
-
+                    <div class="melhorias-solo">
+                        <input type="image" src="imagens/cursor-pointer-blue.png" alt="Cursor" id="melho1ponto5" name="melho" class="btmelho" onclick="multi(1.5, 0, 300)" onmouseover="descricao(0)" onmouseout="descricaoSaida(0)">
+                        <div class="msg" name="caixa">
+                            <div class="tr" name="trian"></div>
+                            <p class="dp">Aumenta o multiplicador em 1.5 vezes<br><span class="destaque">Valor: 300 clicadas.</span></p>
+                        </div>
+                    </div>
+                    <div class="melhorias-solo">
+                        <input type="image" src="./imagens/cursor-pointer-red.png" alt="Cursor" id="melho2" name="melho" class="btmelho" onclick="multi(2, 1, 1000)" onmouseover="descricao(1)" onmouseout="descricaoSaida(1)">
+                        <div class="msg" name="caixa">
+                            <div class="tr" name="trian"></div>
+                            <p class="dp">Aumenta o multiplicador em 2 vezes<br><span class="destaque">Valor: 1Mil clicadas</span></p>
+                        </div>
+                    </div>
+                    <div class="melhorias-solo">
+                        <input type="image" src="./imagens/cursor-pointer-orange.png" alt="Cursor" id="melho4" name="melho" class="btmelho" onclick="multi(4, 2, 10000)" onmouseover="descricao(2)" onmouseout="descricaoSaida(2)">
+                        <div class="msg" name="caixa">
+                            <div class="tr" name="trian"></div>
+                            <p class="dp">Aumenta o multiplicador em 4 vezes<br><span class="destaque">Valor: 10Mil clicadas</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <script src="scripts/script.js"></script>
+            <script src="./scripts/script.js"></script>
         </main>
     </body>
 </html>

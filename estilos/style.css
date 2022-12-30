@@ -57,6 +57,66 @@ div#mouse img {
     transform: translate(-50%, -50%);
 }
 
+div#mouse > div#melhorias {
+    position: absolute;
+    height: 100%;
+    width: calc(50%);
+    padding: 15px 40px 15px 130px;
+    right: 0;
+}
+
+div#mouse div.melhorias-solo {
+    display: inline-block;
+    position: relative;
+}
+
+div#mouse input.btmelho {
+    margin: 10px 0 0 10px;
+    width: 35px;
+    transition: width .2s;
+    display: none;
+}
+
+div.msg {
+    display: none;
+    position: absolute;
+    background-color: rgb(83, 83, 83);
+    top: 80px;
+    min-height: 50px;
+    min-width: 62px;
+    width: auto;
+    max-width: 180px;
+    padding: 0 13px 13px 0;
+    border-radius: 7px;
+    z-index: 1;
+    opacity: 0;
+}
+
+div.tr {
+    display: none;
+    position: absolute;
+    background-color: rgb(83, 83, 83);
+    top: -10px;
+    height: 30px;
+    left: 14px;
+    width: 40px;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+div.msg > p.dp {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    color: black;
+    font: lighter 16px Arial;
+}
+
+.destaque {
+    font-weight: bold;
+    color: white;
+}
+
 @keyframes animacao-neve {
     from {
         background-position: center bottom;
