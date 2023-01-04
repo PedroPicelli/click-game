@@ -10,7 +10,16 @@
     </head>
     <body>
         <main>
-            <p>Versão beta 0.3</p>
+            <p id="versao">Versão beta 0.3</p>
+            <div id="adicionais">
+                <div class="melhorias-solo">
+                    <input type="image" src="./imagens/cursor-pointer.png" alt="Auto Click" onclick="adicional()" onmouseover="descricao(0, true)" onmouseout="descricaoSaida(0, true)">
+                    <div class="msgAdicional" name="caixaAdicional">
+                        <div class="trAdicional" name="trianAdicional"></div>
+                        <p class="dp">Adiciona um clicador automatico, que fica clicando de 2 em 2 segundos.<br><span class="destaque">Valor: 1Mil clicadas.</span></p>
+                    </div>
+                </div>
+            </div>
             <div id="mouse">
                 <div id="vc">
                     <h1 id="vezesClicadas">0 clicadas</h1>

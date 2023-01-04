@@ -1,5 +1,3 @@
-
-
 let titulo = window.document.getElementById('titulo') // pego o local do titulo
 let cursordiv = window.document.getElementById('cursor-div') // pego o local do cursor
 let cursor = window.document.getElementById('cursor')
@@ -241,19 +239,10 @@ function multi(mul, btc, valor) {
     }
 }
 
-function descricao(btc) {
-    let caixa = window.document.getElementsByName('caixa')[btc]
-    let triangulo = window.document.getElementsByName('trian')[btc]
-    caixa.style.display = 'block'
-    triangulo.style.display = 'block'
-    setTimeout(function() {
-        caixa.style.transition = '1s'
-        triangulo.style.transition = '1s'
-
-        caixa.style.opacity = '100'
-        triangulo.style.opacity = '100'
-    }, 1)
-    setTimeout(function() {
+function descricao(btc, adic=false) {
+    if(adic === false) {
+        let caixa = window.document.getElementsByName('caixa')[btc]
+        let triangulo = window.document.getElementsByName('trian')[btc]
         caixa.style.display = 'block'
         triangulo.style.display = 'block'
         setTimeout(function() {
@@ -263,21 +252,69 @@ function descricao(btc) {
             caixa.style.opacity = '100'
             triangulo.style.opacity = '100'
         }, 1)
-    }, 250)
+        setTimeout(function() {
+            caixa.style.display = 'block'
+            triangulo.style.display = 'block'
+            setTimeout(function() {
+                caixa.style.transition = '1s'
+                triangulo.style.transition = '1s'
+
+                caixa.style.opacity = '100'
+                triangulo.style.opacity = '100'
+            }, 1)
+        }, 250)
+    } else {
+        let caixaAdicional = window.document.getElementsByName('caixaAdicional')[btc]
+        let trianguloAdicional = window.document.getElementsByName('trianAdicional')[btc]
+        caixaAdicional.style.display = 'block'
+        trianguloAdicional.style.display = 'block'
+        setTimeout(function() {
+            caixaAdicional.style.transition = '1s'
+            trianguloAdicional.style.transition = '1s'
+
+            caixaAdicional.style.opacity = '100'
+            trianguloAdicional.style.opacity = '100'
+        }, 1)
+        setTimeout(function() {
+            caixaAdicional.style.display = 'block'
+            trianguloAdicional.style.display = 'block'
+            setTimeout(function() {
+                caixaAdicional.style.transition = '1s'
+                trianguloAdicional.style.transition = '1s'
+
+                caixaAdicional.style.opacity = '100'
+                trianguloAdicional.style.opacity = '100'
+            }, 1)
+        }, 250)
+    }
 }
 
-function descricaoSaida(btc) {
-    let caixa = window.document.getElementsByName('caixa')[btc]
-    let triangulo = window.document.getElementsByName('trian')[btc]
-    caixa.style.transition = 'opacity .5s'
-    triangulo.style.transition = 'opacity .5s'
-    
-    caixa.style.opacity = '0'
-    triangulo.style.opacity = '0'
-    setTimeout(function() {
-        caixa.style.display = 'none'
-        triangulo.style.display = 'none'
-    }, 250)
+function descricaoSaida(btc, adic=false) {
+    if(adic === false) {
+        let caixa = window.document.getElementsByName('caixa')[btc]
+        let triangulo = window.document.getElementsByName('trian')[btc]
+        caixa.style.transition = 'opacity .5s'
+        triangulo.style.transition = 'opacity .5s'
+        
+        caixa.style.opacity = '0'
+        triangulo.style.opacity = '0'
+        setTimeout(function() {
+            caixa.style.display = 'none'
+            triangulo.style.display = 'none'
+        }, 250)
+    } else {
+        let caixaAdicional = window.document.getElementsByName('caixaAdicional')[btc]
+        let trianguloAdicional = window.document.getElementsByName('trianAdicional')[btc]
+        caixaAdicional.style.transition = 'opacity .5s'
+        trianguloAdicional.style.transition = 'opacity .5s'
+        
+        caixaAdicional.style.opacity = '0'
+        trianguloAdicional.style.opacity = '0'
+        setTimeout(function() {
+            caixaAdicional.style.display = 'none'
+            trianguloAdicional.style.display = 'none'
+        }, 250)
+    }
 }
 
 detectando()
